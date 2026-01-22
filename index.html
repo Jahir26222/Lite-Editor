@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiteEdit Pro | Auto-Save</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <header class="toolbar">
+        <div class="logo">LiteEdit</div>
+        <div class="tool-group">
+            <button id="add-rect">Rectangle</button>
+            <button id="add-text">Text Box</button>
+        </div>
+        <div class="action-group">
+            <span id="status-chip">Saved</span>
+            <button id="export-json">JSON</button>
+            <button id="export-html" class="primary">Export HTML</button>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">Layers</div>
+            <div id="layers-list"></div>
+        </aside>
+
+        <section id="canvas-wrapper">
+            <div id="canvas"></div>
+        </section>
+
+        <aside class="sidebar">
+            <div class="sidebar-header">Properties</div>
+            <div id="no-selection" class="empty-state">Select an element</div>
+            
+            <div id="props-panel" class="hidden">
+                <div class="prop-section">
+                    <label>Layout</label>
+                    <div class="grid-2x2">
+                        <div class="input-field"><span>X</span><input type="number" id="prop-x"></div>
+                        <div class="input-field"><span>Y</span><input type="number" id="prop-y"></div>
+                        <div class="input-field"><span>W</span><input type="number" id="prop-w"></div>
+                        <div class="input-field"><span>H</span><input type="number" id="prop-h"></div>
+                    </div>
+                </div>
+                <div class="prop-section">
+                    <label>Rotation</label>
+                    <div class="input-field"><span>°</span><input type="number" id="prop-rotate"></div>
+                </div>
+                <div class="prop-section">
+                    <label id="color-label">Fill Color</label>
+                    <input type="color" id="prop-color">
+                </div>
+                <div class="prop-section hidden" id="text-content-section">
+                    <label>Text Content</label>
+                    <textarea id="prop-text-val" rows="4" style="resize: none;"></textarea>
+                </div>
+                <button id="delete-btn" class="danger">Delete Element</button>
+            </div>
+        </aside>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
